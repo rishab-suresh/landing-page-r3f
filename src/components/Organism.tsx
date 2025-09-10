@@ -13,7 +13,7 @@ interface OrganismRef {
   object3D: THREE.Object3D;
 }
 
-export const Organism = forwardRef<OrganismRef>((props, ref) => {
+export const Organism = forwardRef<OrganismRef>((_props, ref) => {
   const groupRef = useRef<THREE.Group>(null!);
   const tumbleGroupRef = useRef<THREE.Group>(null!);
   const meshRef = useRef<THREE.Mesh>(null!);

@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import { forwardRef } from 'react';
+import type { ReactNode } from 'react';
 
 interface SectionProps {
   title: string;
@@ -10,7 +11,7 @@ interface SectionProps {
   nextId?: string;
 }
 
-export const Section = React.forwardRef<HTMLElement, SectionProps>(({ title, subtitle, description, children, align = 'center', id, nextId }, ref) => {
+export const Section = forwardRef<HTMLElement, SectionProps>(({ title, subtitle, description, children, align = 'center', id, nextId }, ref) => {
   return (
     <section id={id} ref={ref} className={`min-h-screen flex flex-col justify-center ${align === 'left' ? 'items-start text-left' : align === 'right' ? 'items-end text-right' : 'items-center text-center'} px-8 py-20 relative`}>
       {/* Background gradient overlay */}
